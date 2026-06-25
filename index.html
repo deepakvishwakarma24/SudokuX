@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SudokuX | Backtracking Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>SudokuX</h1>
+
+      <p class="subtitle">
+        Interactive Sudoku Solver using Recursive Backtracking
+      </p>
+
+      <div class="board">
+        <!-- Row 1 -->
+        <div class="cell bl bt" id="0" contenteditable="true"></div>
+        <div class="cell bt" id="1" contenteditable="true"></div>
+        <div class="cell br bt" id="2" contenteditable="true"></div>
+
+        <div class="cell bl bt" id="3" contenteditable="true"></div>
+        <div class="cell bt" id="4" contenteditable="true"></div>
+        <div class="cell br bt" id="5" contenteditable="true"></div>
+
+        <div class="cell bl bt" id="6" contenteditable="true"></div>
+        <div class="cell bt" id="7" contenteditable="true"></div>
+        <div class="cell br bt" id="8" contenteditable="true"></div>
+
+        <!-- Row 2 -->
+        <div class="cell bl" id="9" contenteditable="true"></div>
+        <div class="cell" id="10" contenteditable="true"></div>
+        <div class="cell br" id="11" contenteditable="true"></div>
+
+        <div class="cell bl" id="12" contenteditable="true"></div>
+        <div class="cell" id="13" contenteditable="true"></div>
+        <div class="cell br" id="14" contenteditable="true"></div>
+
+        <div class="cell bl" id="15" contenteditable="true"></div>
+        <div class="cell" id="16" contenteditable="true"></div>
+        <div class="cell br" id="17" contenteditable="true"></div>
+
+        <!-- Row 3 -->
+        <div class="cell bl bb" id="18" contenteditable="true"></div>
+        <div class="cell bb" id="19" contenteditable="true"></div>
+        <div class="cell br bb" id="20" contenteditable="true"></div>
+
+        <div class="cell bl bb" id="21" contenteditable="true"></div>
+        <div class="cell bb" id="22" contenteditable="true"></div>
+        <div class="cell br bb" id="23" contenteditable="true"></div>
+
+        <div class="cell bl bb" id="24" contenteditable="true"></div>
+        <div class="cell bb" id="25" contenteditable="true"></div>
+        <div class="cell br bb" id="26" contenteditable="true"></div>
+
+        <!-- Row 4 -->
+        <div class="cell bl" id="27" contenteditable="true"></div>
+        <div class="cell" id="28" contenteditable="true"></div>
+        <div class="cell br" id="29" contenteditable="true"></div>
+
+        <div class="cell bl" id="30" contenteditable="true"></div>
+        <div class="cell" id="31" contenteditable="true"></div>
+        <div class="cell br" id="32" contenteditable="true"></div>
+
+        <div class="cell bl" id="33" contenteditable="true"></div>
+        <div class="cell" id="34" contenteditable="true"></div>
+        <div class="cell br" id="35" contenteditable="true"></div>
+
+        <!-- Row 5 -->
+        <div class="cell bl" id="36" contenteditable="true"></div>
+        <div class="cell" id="37" contenteditable="true"></div>
+        <div class="cell br" id="38" contenteditable="true"></div>
+
+        <div class="cell bl" id="39" contenteditable="true"></div>
+        <div class="cell" id="40" contenteditable="true"></div>
+        <div class="cell br" id="41" contenteditable="true"></div>
+
+        <div class="cell bl" id="42" contenteditable="true"></div>
+        <div class="cell" id="43" contenteditable="true"></div>
+        <div class="cell br" id="44" contenteditable="true"></div>
+
+        <!-- Row 6 -->
+        <div class="cell bl bb" id="45" contenteditable="true"></div>
+        <div class="cell bb" id="46" contenteditable="true"></div>
+        <div class="cell br bb" id="47" contenteditable="true"></div>
+
+        <div class="cell bl bb" id="48" contenteditable="true"></div>
+        <div class="cell bb" id="49" contenteditable="true"></div>
+        <div class="cell br bb" id="50" contenteditable="true"></div>
+
+        <div class="cell bl bb" id="51" contenteditable="true"></div>
+        <div class="cell bb" id="52" contenteditable="true"></div>
+        <div class="cell br bb" id="53" contenteditable="true"></div>
+
+        <!-- Row 7 -->
+        <div class="cell bl" id="54" contenteditable="true"></div>
+        <div class="cell" id="55" contenteditable="true"></div>
+        <div class="cell br" id="56" contenteditable="true"></div>
+
+        <div class="cell bl" id="57" contenteditable="true"></div>
+        <div class="cell" id="58" contenteditable="true"></div>
+        <div class="cell br" id="59" contenteditable="true"></div>
+
+        <div class="cell bl" id="60" contenteditable="true"></div>
+        <div class="cell" id="61" contenteditable="true"></div>
+        <div class="cell br" id="62" contenteditable="true"></div>
+
+        <!-- Row 8 -->
+        <div class="cell bl" id="63" contenteditable="true"></div>
+        <div class="cell" id="64" contenteditable="true"></div>
+        <div class="cell br" id="65" contenteditable="true"></div>
+
+        <div class="cell bl" id="66" contenteditable="true"></div>
+        <div class="cell" id="67" contenteditable="true"></div>
+        <div class="cell br" id="68" contenteditable="true"></div>
+
+        <div class="cell bl" id="69" contenteditable="true"></div>
+        <div class="cell" id="70" contenteditable="true"></div>
+        <div class="cell br" id="71" contenteditable="true"></div>
+
+        <!-- Row 9 -->
+        <div class="cell bl bb" id="72" contenteditable="true"></div>
+        <div class="cell bb" id="73" contenteditable="true"></div>
+        <div class="cell br bb" id="74" contenteditable="true"></div>
+
+        <div class="cell bl bb" id="75" contenteditable="true"></div>
+        <div class="cell bb" id="76" contenteditable="true"></div>
+        <div class="cell br bb" id="77" contenteditable="true"></div>
+
+        <div class="cell bl bb" id="78" contenteditable="true"></div>
+        <div class="cell bb" id="79" contenteditable="true"></div>
+        <div class="cell br bb" id="80" contenteditable="true"></div>
+      </div>
+
+      <div class="buttons">
+        <button id="SolvePuzzle">Solve</button>
+        <button id="ResetPuzzle">Reset</button>
+      </div>
+
+      <footer class="footer">
+        Built by Deepak Vishwakarma
+
+        <br />
+
+        Powered by Recursive Backtracking Algorithm
+
+        <br /><br />
+
+        <a
+          href="https://github.com/deepakvishwakarma24/SudokuX"
+          target="_blank"
+        >
+          View Source Code on GitHub
+        </a>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
